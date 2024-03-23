@@ -1,0 +1,89 @@
+PYTHON TASK ONE
+SIMPLE CALCULATOR WITH
+ADVANCE FEATURES
+Write a python program for simple calculator with advance features,
+which implements a simple calculator with advanced features such as
+addition, subtraction, multiplication, division, exponentiation, and
+the option to quit. Study the code and explain how the program
+works, including its main features and functionality. Additionally,
+Imagine you've been tasked with creating comprehensive documentation
+for a Python project.Your documentation should include detailed
+explanations of the code along with images illustrating the
+program's execution and user interactions.
+
+def add(x, y):
+  """Adds two numbers."""
+  return x + y
+
+def subtract(x, y):
+  """Subtracts two numbers."""
+  return x - y
+
+def multiply(x, y):
+  """Multiplies two numbers."""
+  return x * y
+
+def divide(x, y):
+  """Divides two numbers, handling division by zero."""
+  if y == 0:
+    print("Error: Division by zero is not allowed.")
+    return None
+  return x / y
+
+def exponentiate(x, y):
+  """Raises a number to a power."""
+  return x ** y
+
+def get_user_input(prompt):
+  """Gets user input as a float."""
+  while True:
+    try:
+      return float(input(prompt))
+    except ValueError:
+      print("Invalid input. Please enter a number.")
+
+def print_menu():
+  """Prints the calculator menu."""
+  print("\nSimple Calculator")
+  print("1. Add")
+  print("2. Subtract")
+  print("3. Multiply")
+  print("4. Divide")
+  print("5. Exponentiate")
+  print("6. Quit")
+
+def main():
+  """The main function that runs the calculator."""
+  while True:
+    print_menu()
+    choice = input("Enter your choice (1-6): ")
+
+    if choice in ('1', '2', '3', '4', '5'):
+      num1 = get_user_input("Enter the first number: ")
+      num2 = get_user_input("Enter the second number: ")
+
+      if choice == '1':
+        result = add(num1, num2)
+        print(f"{num1} + {num2} = {result}")
+      elif choice == '2':
+        result = subtract(num1, num2)
+        print(f"{num1} - {num2} = {result}")
+      elif choice == '3':
+        result = multiply(num1, num2)
+        print(f"{num1} * {num2} = {result}")
+      elif choice == '4':
+        result = divide(num1, num2)
+        if result is not None:
+          print(f"{num1} / {num2} = {result}")
+      elif choice == '5':
+        result = exponentiate(num1, num2)
+        print(f"{num1} ^ {num2} = {result}")
+
+    elif choice == '6':
+      print("Exiting calculator...")
+      break
+    else:
+      print("Invalid input. Please enter a number between 1 and 6.")
+
+if _name_ == "_main_":
+  main()
