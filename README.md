@@ -35,104 +35,71 @@ def divide(x, y):
     return None
   return x / y
 
-def exponentiate(x, y):
-  """Raises a number to a power."""
+def exponent(x, y):
+  """Calculates the power of a number."""
   return x ** y
 
-def get_user_input(prompt):
-  """Gets user input as a float."""
+def get_operation():
+  """Prompts the user for the desired operation."""
   while True:
-    try:
-      return float(input(prompt))
-    except ValueError:
-      print("Invalid input. Please enter a number.")
+    print("Select operation:")
+    print("1. Add")
+    print("2. Subtract")
+    print("3. Multiply")
+    print("4. Divide")
+    print("5. Exponent")
+    print("6. Quit")
 
-def print_menu():
-  """Prints the calculator menu."""
-  print("\nSimple Calculator")
-  print("1. Add")
-  print("2. Subtract")
-  print("3. Multiply")
-  print("4. Divide")
-  print("5. Exponentiate")
-  print("6. Quit")
+    choice = input("Enter choice(1/2/3/4/5/6): ")
 
-def add(x, y):
-  """Adds two numbers."""
-  return x + y
+    if choice in ('1', '2', '3', '4', '5', '6'):
+      return int(choice)
+    else:
+      print("Invalid Input")
 
-def subtract(x, y):
-  """Subtracts two numbers."""
-  return x - y
-
-def multiply(x, y):
-  """Multiplies two numbers."""
-  return x * y
-
-def divide(x, y):
-  """Divides two numbers, handling division by zero."""
-  if y == 0:
-    print("Error: Division by zero is not allowed.")
-    return None
-  return x / y
-
-def exponentiate(x, y):
-  """Raises a number to a power."""
-  return x ** y
-
-def get_user_input(prompt):
-  """Gets user input as a float."""
-  while True:
-    try:
-      return float(input(prompt))
-    except ValueError:
-      print("Invalid input. Please enter a number.")
-
-def print_menu():
-  """Prints the calculator menu."""
-  print("\nSimple Calculator")
-  print("1. Add")
-  print("2. Subtract")
-  print("3. Multiply")
-  print("4. Divide")
-  print("5. Exponentiate")
-  print("6. Quit")
+def get_numbers():
+  """Prompts the user for two numbers."""
+  num1 = float(input("Enter first number: "))
+  num2 = float(input("Enter second number: "))
+  return num1, num2
 
 def main():
-  """The main function that runs the calculator."""
+  """Main function to run the calculator."""
+  print("Simple Calculator with Advanced Features")
+  print("--------------------------------------")
+
   while True:
-    print_menu()
-    choice = input("Enter your choice (1-6): ")
+    # Get operation choice
+    operation = get_operation()
 
-    if choice in ('1', '2', '3', '4', '5'):
-      num1 = get_user_input("Enter the first number: ")
-      num2 = get_user_input("Enter the second number: ")
-
-      if choice == '1':
-        result = add(num1, num2)
-        print(f"{num1} + {num2} = {result}")
-      elif choice == '2':
-        result = subtract(num1, num2)
-        print(f"{num1} - {num2} = {result}")
-      elif choice == '3':
-        result = multiply(num1, num2)
-        print(f"{num1} * {num2} = {result}")
-      elif choice == '4':
-        result = divide(num1, num2)
-        if result is not None:
-          print(f"{num1} / {num2} = {result}")
-      elif choice == '5':
-        result = exponentiate(num1, num2)
-        print(f"{num1} ^ {num2} = {result}")
-
-    elif choice == '6':
-      print("Exiting calculator...")
+    # Exit if user chooses to quit
+    if operation == 6:
+      print("Goodbye!")
       break
-    else:
-      print("Invalid input. Please enter a number between 1 and 6.")
 
-if _name_ == "_main_":
+    # Get two numbers
+    num1, num2 = get_numbers()
+
+    # Perform calculation based on choice
+    result = None
+    if operation == 1:
+      result = add(num1, num2)
+    elif operation == 2:
+      result = subtract(num1, num2)
+    elif operation == 3:
+      result = multiply(num1, num2)
+    elif operation == 4:
+      result = divide(num1, num2)
+    elif operation == 5:
+      result = exponent(num1, num2)
+
+    # Display result (if applicable)
+    if result is not None:
+      print("Result:", result)
+
+if __name__ == "__main__":
   main()
+
 
 
 **code explanation :**
