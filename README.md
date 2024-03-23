@@ -14,6 +14,48 @@ The task assigned to Ayushi Hukum during codtech it solutions internship program
 
 The code defines several functions for specific tasks and utilizes the main function to manage the user interaction and program flow. It ensures robust input handling and error management for division by zero.
 
+
+def add(x, y):
+  """Adds two numbers."""
+  return x + y
+
+def subtract(x, y):
+  """Subtracts two numbers."""
+  return x - y
+
+def multiply(x, y):
+  """Multiplies two numbers."""
+  return x * y
+
+def divide(x, y):
+  """Divides two numbers, handling division by zero."""
+  if y == 0:
+    print("Error: Division by zero is not allowed.")
+    return None
+  return x / y
+
+def exponentiate(x, y):
+  """Raises a number to a power."""
+  return x ** y
+
+def get_user_input(prompt):
+  """Gets user input as a float."""
+  while True:
+    try:
+      return float(input(prompt))
+    except ValueError:
+      print("Invalid input. Please enter a number.")
+
+def print_menu():
+  """Prints the calculator menu."""
+  print("\nSimple Calculator")
+  print("1. Add")
+  print("2. Subtract")
+  print("3. Multiply")
+  print("4. Divide")
+  print("5. Exponentiate")
+  print("6. Quit")
+
 def add(x, y):
   """Adds two numbers."""
   return x + y
