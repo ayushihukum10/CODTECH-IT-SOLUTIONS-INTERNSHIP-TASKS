@@ -1,3 +1,4 @@
+**TASK 1. :SIMPLE CALCULATOR WITH ADVANCE FEATURES**
 **Title: CODTECH-IT-SOLUTIONS-INTERNSHIP-TASK Documentation : SIMPLE CALCULATOR WITH ADVANCE FEATURES**
 **Introduction:** 
 The task is SIMPLE CALCULATOR WITH ADVANCE FEATURES
@@ -171,4 +172,83 @@ Error Handling: Gracefully handles invalid input (choices or numbers) and divisi
 User Friendliness: Presents a clear menu for selecting operations and guides the user through the calculation process.
 Code Structure: Employs functions, loops, error handling, and data types effectively to create a well-organized and maintainable program.
 This comprehensive approach ensures a robust and user-friendly calculator that can be easily extended to include additional features in the future.
-this concludes the documentation for the task "SIMPLE CALCULATOR WITH ADVANCE FEATURES" assigned during the codtech IT solutions internship program
+this concludes the documentation for the task "SIMPLE CALCULATOR WITH ADVANCE FEATURES" assigned during the codtech IT solutions internship program.
+
+___________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+
+**TASK 2 : SIMPLE PYTHON CHATBOT**
+Title: CODTECH-IT-SOLUTIONS-INTERNSHIP-TASK Documentation : SIMPLE PYTHON CHATBOT
+
+**Introduction:** The task is SIMPLE PYTHON CHATBOT
+
+Chatbots are computer programs designed to simulate conversation with human users. They are becoming increasingly common in various applications, providing customer service, answering frequently asked questions, and offering general information. This project utilizes Python and Natural Language Processing (NLP) techniques to create a basic chatbot that can understand user input and respond in a contextually relevant manner.
+
+Intern Information : NAME : AYUSHI HUKUM INTERN ID : COD4449
+
+Task Description: The task assigned to Ayushi Hukum during codtech it solutions internship program is to Write a python program for SIMPLE PYTHON CHATBOT
+import nltk
+from nltk.stem import PorterStemmer
+import random
+
+nltk.download('punkt')
+
+# Predefined greetings and responses
+greetings = ["hi", "hello", "hey"]
+responses = ["Hi there!", "Hey! How can I help you today?", "Glad you're here! What's on your mind?"]
+
+# Preprocess user input for better understanding
+def preprocess(text):
+  tokens = nltk.word_tokenize(text.lower())
+  stemmer = PorterStemmer()
+  stems = [stemmer.stem(word) for word in tokens]
+  return stems
+
+# Function to handle user input and respond accordingly
+def chat():
+  while True:
+    user_input = input("You: ")
+    stems = preprocess(user_input)
+
+    # Check for greetings
+    if any(word in stems for word in greetings):
+      print(random.choice(responses))
+      continue
+
+    # Add more conversation logic here based on user intent
+    # (e.g., using keyword matching, NLTK libraries for sentiment analysis)
+
+    print("Chatbot: I'm still learning, how can I improve?")
+
+# Start the chat session
+chat()
+**code explanation:** nltk: Used for natural language processing tasks, providing resources for tokenization, stemming, and more.
+PorterStemmer: A class  from NLTK used to reduce words to their root forms (stems), aiding in word matching.
+random: Used to randomly select responses for a more natural conversation flow.
+
+**Code breakdown** 
+
+Import: Necessary libraries are imported.
+Download: The "punkt" resource is downloaded for NLTK, containing sentence tokenizers.
+Greetings and Responses: Lists of predefined greetings and potential responses are created.
+Preprocess Function: Takes text input as an argument.
+Converts text to lowercase for consistency.
+Uses NLTK's word_tokenize function to split text into words (tokens).
+Applies stemming to tokens for better matching.
+Returns a list of stemmed words.
+Chat Function: Enters an infinite loop to enable continuous conversation. Prompts the user for input. Preprocesses the user's input using the preprocess function. Checks if any stemmed words match words in the "greetings" list. If so, randomly selects and prints a response from the "responses" list. Includes a placeholder for adding more conversation logic (e.g., keyword matching, sentiment analysis).
+If no matching greeting is found, acknowledges the need for further learning. Start Chat Session: The chat function is called to initiate the conversation.
+Overall, this code lays the foundation for a basic chatbot capable of:Recognizing and responding to simple greetings. Preprocessing user input for more effective word matching. Implementing additional conversation logic for a richer experience.
+
+
+Rationale : The code is modular, separating functionalities like library imports, conversation pairs, and chatbot creation for better readability and maintainability.
+Regular expressions are used in patterns to capture various user phrasings for the same intent.
+The loop structure facilitates continuous conversation flow.
+
+Conclusion: The task is assigned to Ayushi Hukum during the codtech IT solutions internship program Involved "SIMPLE PYTHON CHATBOT" This Python program successfully implements a SIMPLE PYTHON CHATBOT, Develop a Python chatbot capable of engaging in conversation with users. The chatbot should understand natural language input and respond appropriately, providing relevant information or assistance. Utilize natural language processing techniques to enhance the bot's ability to interpret user queries accurately. Ensure the chatbot's responses are contextually relevant and contribute to a seamless
+user experience
+This Python code provides a foundation for building a basic chatbot. By incorporating NLP techniques and expanding conversation pairs, this chatbot can be progressively enhanced to offer a more engaging and informative user experience. The outlined documentation offers a clear understanding of the code functionalities and paves the way for further development.
+ this concludes the documentation for the task "SIMPLE CALCULATOR WITH ADVANCE FEATURES" assigned during the codtech IT solutions internship program
+
+
+
